@@ -174,12 +174,12 @@ penerapan **unit testing** dan **widget testing** pada aplikasi mobile berbasis 
 pengujian dilakukan untuk memastikan logika aplikasi dan tampilan antarmuka berjalan dengan benar tanpa bergantung pada backend
 ## Daftar Fitur
 
-### 1. Validasi Input (Unit Test)
+## 1. Validasi Input (Unit Test)
 Fitur yang dipilih untuk unit testing adalah **validasi input** pada halaman Login dan Register.
 
 ### Logika yang Diuji
 File: `lib/utils/validators.dart`
----
+
 Fungsi yang diuji:
 - `validateEmail()`
   - Mengembalikan pesan error jika email kosong
@@ -202,7 +202,7 @@ Pengujian ini memastikan logika validasi input bekerja dengan benar pada berbaga
 
 ---
 
-## Widget Testing
+## 2. Widget Testing
 
 ### Widget yang Diuji
 - `HomePage`
@@ -230,6 +230,9 @@ flutter test
 ```
 ### Hasil Pengujian
 Gambar : 
+
+<img width="788" height="72" alt="image" src="https://github.com/user-attachments/assets/798d9577-ee0f-4de7-9c32-a1ebb71131c4" />
+
 
 
 
