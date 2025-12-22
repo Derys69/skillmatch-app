@@ -67,7 +67,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 onSaved: (v) => name = v!,
               ),
               const SizedBox(height: 10),
-
+// Lokasi sementara
               TextFormField(
                 initialValue: user.location,
                 decoration: const InputDecoration(labelText: "Lokasi"),

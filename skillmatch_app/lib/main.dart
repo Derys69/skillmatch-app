@@ -22,7 +22,6 @@ class SkillMatchApp extends StatelessWidget {
           create: (_) => AuthViewModel(AuthRepository()),
         ),
 
-        /// FIX ERROR DI SINI — TANPA read(), TANPA error
         ChangeNotifierProxyProvider<AuthViewModel, ProfileViewModel>(
           create: (context) =>
               ProfileViewModel(UserRepository(), Provider.of<AuthViewModel>(context, listen: false)),

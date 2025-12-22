@@ -48,6 +48,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 onSaved: (v) => pass = v!,
               ),
               const SizedBox(height: 10),
+              //Sementara
               TextFormField(
                 decoration: const InputDecoration(labelText: "Lokasi"),
                 onSaved: (v) => location = v!,

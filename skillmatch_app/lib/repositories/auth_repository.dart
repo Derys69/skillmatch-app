@@ -3,12 +3,14 @@ import 'package:http/http.dart' as http;
 import '../models/user.dart';
 
 class AuthRepository {
-  static const baseUrl = "http://localhost:8080";
+  static const String baseUrl = "http://10.0.2.2:8080";
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     final response = await http.post(
       Uri.parse("$baseUrl/auth/login"),
-      headers: {"Content-Type": "application/json"},
+      headers: const {
+        "Content-Type": "application/json",
+      },
       body: jsonEncode({
         "email": email,
         "password": password,
@@ -27,11 +29,17 @@ class AuthRepository {
   }
 
   Future<Map<String, dynamic>> register(
-      String name, String email, String password, String location, String mainSkill) async {
-
+    String name,
+    String email,
+    String password,
+    String location,
+    String mainSkill,
+  ) async {
     final response = await http.post(
       Uri.parse("$baseUrl/auth/register"),
-      headers: {"Content-Type": "application/json"},
+      headers: const {
+        "Content-Type": "application/json",
+      },
       body: jsonEncode({
         "name": name,
         "email": email,
@@ -41,7 +49,7 @@ class AuthRepository {
       }),
     );
 
-    if (response.statusCode == 201 || response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       final json = jsonDecode(response.body);
       return {
         "token": json["access_token"],

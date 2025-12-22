@@ -168,4 +168,68 @@ lib/
 
 ---
 
+# Test
+
+penerapan **unit testing** dan **widget testing** pada aplikasi mobile berbasis Flutter.
+pengujian dilakukan untuk memastikan logika aplikasi dan tampilan antarmuka berjalan dengan benar tanpa bergantung pada backend
+## Daftar Fitur
+
+### 1. Validasi Input (Unit Test)
+Fitur yang dipilih untuk unit testing adalah **validasi input** pada halaman Login dan Register.
+
+### Logika yang Diuji
+File: `lib/utils/validators.dart`
+---
+Fungsi yang diuji:
+- `validateEmail()`
+  - Mengembalikan pesan error jika email kosong
+  - Mengembalikan pesan error jika format email tidak valid
+  - Mengembalikan `null` jika email valid
+- `validatePassword()`
+  - Mengembalikan pesan error jika password kosong
+  - Mengembalikan pesan error jika panjang password kurang dari 6 karakter
+  - Mengembalikan `null` jika password valid
+
+  ## Implementasi Unit Test
+File: `test/validators_test.dart`
+
+Unit test ditulis dengan mengikuti pola **Arrange – Act – Assert (AAA)**:
+- **Arrange**: Menyiapkan data atau kondisi awal
+- **Act**: Memanggil fungsi yang akan diuji
+- **Assert**: Memastikan hasil sesuai dengan yang diharapkan menggunakan `expect()`
+
+Pengujian ini memastikan logika validasi input bekerja dengan benar pada berbagai kondisi.
+
+---
+
+## Widget Testing
+
+### Widget yang Diuji
+- `HomePage`
+
+### Tujuan Pengujian
+Widget test dilakukan untuk memastikan bahwa:
+- Halaman Home dapat dirender tanpa error
+- Teks sambutan (Welcome back) ditampilkan
+- Nama pengguna tampil pada layar
+- Tombol Logout tersedia dan dapat diakses
+
+### Implementasi Widget Test
+File: `test/home_page_widget_test.dart`
+
+Pada pengujian ini:
+- `AuthViewModel` dan `ProfileViewModel` disediakan menggunakan `Provider`
+- Data pengguna dummy digunakan untuk mensimulasikan kondisi pengguna sudah login
+- Tidak ada pemanggilan backend atau API
+## Cara Menjalankan Pengujian
+Jalankan perintah berikut di root project:
+
+```bash
+flutter test
+
+```
+### Hasil Pengujian
+Gambar : 
+
+
 

@@ -31,7 +31,7 @@ class ProfileViewModel extends ChangeNotifier {
 
   Future<void> update(String name, String loc, String skill) async {
     if (_auth.token == null) return;
-
+    errorMessage = null;
     isLoading = true;
     notifyListeners();
 
@@ -40,9 +40,10 @@ class ProfileViewModel extends ChangeNotifier {
       _auth.user = updated;
     } catch (e) {
       errorMessage = e.toString();
-    }
+    }finally {
 
     isLoading = false;
     notifyListeners();
+    }
   }
 }

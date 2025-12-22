@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/user.dart';
 
 class UserRepository {
-  static const baseUrl = "http://localhost:8080";
+  static const baseUrl = "http://10.0.2.2:8080";
 
   Future<User> getMe(String token) async {
     final response = await http.get(
